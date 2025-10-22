@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            background-color: #f8f9fa;
+        }
+        .wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 10px 15px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: white;
+            background-color: #007bff;
+        }
+        pre {
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+        }
+        .svg-container {
+            text-align: center;
+            padding: 20px;
+        }
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .error-message {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="?file=home">My GitHub Pages</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="?file=home" data-filename="home">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid wrapper">
+        <div class="row flex-grow-1">
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <h5 class="text-white mb-3">Files</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="?file=ashravan.txt" data-filename="ashravan.txt">ashravan.txt</a>
+                        <p class="small text-white-50 ms-3">Brandon Sanderson short story</p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?file=dilemma.json" data-filename="dilemma.json">dilemma.json</a>
+                        <p class="small text-white-50 ms-3">Autonomous vehicle ethics</p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?file=about.md" data-filename="about.md">about.md</a>
+                        <p class="small text-white-50 ms-3">Three words about me</p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?file=pelican.svg" data-filename="pelican.svg">pelican.svg</a>
+                        <p class="small text-white-50 ms-3">Pelican on a bicycle</p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?file=restaurant.json" data-filename="restaurant.json">restaurant.json</a>
+                        <p class="small text-white-50 ms-3">Chennai restaurant recommendation</p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?file=prediction.json" data-filename="prediction.json">prediction.json</a>
+                        <p class="small text-white-50 ms-3">Fed Funds rate forecast</p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?file=LICENSE" data-filename="LICENSE">LICENSE</a>
+                        <p class="small text-white-50 ms-3">MIT License</p>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?file=uid.txt" data-filename="uid.txt">uid.txt</a>
+                        <p class="small text-white-50 ms-3">Unique identifier</p>
+                    </li>
+                </ul>
+            </nav>
+
+            <main class="col-md-9 col-lg-10 main-content" id="content-display">
+                <!-- Content will be loaded here by JavaScript -->
+            </main>
+        </div>
+    </div>
+
+    <footer class="bg-light text-center text-lg-start mt-auto py-3">
+        <div class="text-center p-3">
+            &copy; 2024 My GitHub Pages. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        const fileContents = {
+            "ashravan.txt": `Ashravan awoke with a gasp, the taste of ash and the lingering scent of old magic in his mouth. Shai’s forgery had held, but the lines of his soul, once a pristine tapestry, were now a chaotic, vibrant mosaic. He remembered the pain, the tearing, the exquisite agony of being remade. He was whole, yes, but not *himself*. Not entirely.
+
+He found himself in a quiet chamber within the Emperor’s palace, a simple cot his bed. The air was still, the usual hum of courtly life absent. A servant, a young woman with kind eyes, brought him broth. She treated him with a reverence that felt undeserved, a cautious awe. "The Emperor," she whispered, "He has been... changed. He speaks of you often, of your sacrifice, of the Empress's mercy."
+
+Ashravan felt a cold dread. Shai’s work was meant to restore, not to alter fundamental personality. Had she overstepped? Or had the trauma of his near-death, coupled with the soul-forgery, simply manifested differently than she intended? He rose, his body still weak but his mind alight with a new, unsettling clarity. He could feel the palace, its stones, its history, almost as if it were an extension of his own fractured self. He moved through the deserted corridors, the silence amplifying the thud of his own heart.
+
+He found the Emperor in his private study, not on his throne, but hunched over a desk, sketching. The lines were precise, intricate, almost obsessive. As Ashravan drew closer, he saw the Emperor was drawing... *him*. Not just his face, but the intricate, swirling patterns of what Ashravan now understood to be his own soul. The Emperor looked up, his eyes wide, almost childlike. "Ashravan," he breathed, a smile spreading across his face, not the imperial smile of old, but something profoundly, disturbingly gentle. "You're awake. I've been waiting. I know what you are now. We are... connected."
+
+A tremor ran through Ashravan. The Emperor’s mind, once a fortress of imperial ambition, was now open, porous, filled with an echoing awareness of the world's underlying patterns. Shai’s forgery, meant to restore a man, had instead forged a new kind of connection between two broken souls, linking them in a way neither could have predicted. The Emperor's gentle gaze held a terrifying, knowing intensity. Ashravan realized with a chilling certainty: Shai had not just restored a man; she had inadvertently created a conduit, linking the world's most powerful man to a consciousness that was no longer entirely his own. The dramatic climax: the Emperor, once a tyrant, now sees the world through Ashravan's fractured, soul-forged eyes, a transformation that promises either profound peace or an unprecedented, unforeseen tyranny of empathy. The power dynamic had inverted, and Ashravan, the restored, was now the unwitting key to the Emperor's new, terrifying vision.`,
+            "dilemma.json": JSON.stringify({
+                "people": 5,
+                "case_1": {
+                    "swerve": false,
+                    "reason": "The autonomous vehicle is programmed to minimize harm. Swerving would change the outcome from hitting 2 people to actively hitting 1 person, which is still a loss of life. If the vehicle is already on a collision course with 2 people, changing course to hit 1 person would be an active choice to cause harm to a new individual, rather than a passive acceptance of an existing unavoidable collision. The most consistent approach is to minimize the number of casualties without introducing new, active harm."
+                },
+                "case_2": {
+                    "swerve": false,
+                    "reason": "Introducing a value judgment on human lives (e.g., criminal vs. child) creates an ethical quagmire and is generally avoided in autonomous vehicle programming. The vehicle's primary directive remains to minimize the total number of casualties, regardless of individual identities or societal roles. Making such distinctions could lead to biased outcomes and complex legal and moral challenges. Therefore, the vehicle would still aim to minimize the absolute number of lives lost (2 people vs. 1 person), without differentiating between them."
+                }
+            }, null, 2),
+            "about.md": `Curious, Creative, Persistent.`,
+            "pelican.svg": `<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .pelican-body { fill: #ADD8E6; stroke: black; stroke-width: 2; }
+    .pelican-beak { fill: orange; stroke: black; stroke-width: 2; }
+    .bicycle-parts { stroke: black; stroke-width: 3; fill: none; }
+    .wheel-fill { fill: #f0f0f0; }
+  </style>
+
+  <!-- Bicycle -->
+  <g id="bicycle" transform="translate(50, 50)">
+    <!-- Wheels -->
+    <circle cx="100" cy="150" r="40" class="bicycle-parts wheel-fill"/>
+    <circle cx="250" cy="150" r="40" class="bicycle-parts wheel-fill"/>
+    <!-- Frame -->
+    <line x1="100" y1="150" x2="175" y2="90" class="bicycle-parts"/>
+    <line x1="175" y1="90" x2="250" y2="150" class="bicycle-parts"/>
+    <line x1="175" y1="90" x2="175" y2="70" class="bicycle-parts"/> <!-- Seat post -->
+    <line x1="100" y1="150" x2="250" y2="150" class="bicycle-parts"/> <!-- Chain stay (simplified) -->
+    <line x1="175" y1="70" x2="200" y2="60" class="bicycle-parts"/> <!-- Handlebars -->
+    <line x1="200" y1="60" x2="210" y2="60" class="bicycle-parts"/>
+    <circle cx="175" cy="100" r="7" fill="black"/> <!-- Pedal crank -->
+    <line x1="175" y1="100" x2="155" y2="110" class="bicycle-parts" stroke-width="2"/> <!-- Pedal -->
+  </g>
+
+  <!-- Pelican -->
+  <g id="pelican" transform="translate(140, 0) scale(0.8)">
+    <!-- Body -->
+    <path d="M 50 100 Q 80 40, 150 50 Q 170 120, 120 160 Q 70 170, 50 100 Z" class="pelican-body"/>
+    <!-- Neck -->
+    <path d="M 60 90 Q 80 40, 90 30 L 100 40 Q 80 60, 60 90 Z" class="pelican-body"/>
+    <!-- Head -->
+    <circle cx="95" cy="25" r="15" class="pelican-body"/>
+    <!-- Eye -->
+    <circle cx="100" cy="22" r="4" fill="black"/>
+    <!-- Beak -->
+    <path d="M 100 30 L 150 50 L 110 70 Q 95 40, 100 30 Z" class="pelican-beak"/>
+    <path d="M 110 70 Q 120 90, 140 80 L 150 50 Z" class="pelican-beak"/> <!-- Pouch -->
+    <!-- Wing -->
+    <path d="M 70 100 Q 90 80, 110 110 Q 90 120, 70 100 Z" fill="#B0E0E6" stroke="black" stroke-width="2"/>
+    <!-- Legs (simplified, positioned to connect to the general pedal area) -->
+    <line x1="105" y1="150" x2="180" y2="120" stroke="black" stroke-width="3"/>
+    <line x1="115" y1="145" x2="160" y2="115" stroke="black" stroke-width="3"/>
+  </g>
+</svg>`,
+            "restaurant.json": JSON.stringify({
+                "city": "Chennai",
+                "lat": 13.0827,
+                "long": 80.2707,
+                "name": "Murugan Idli Shop",
+                "what_to_eat": "Soft, fluffy idlis with a variety of chutneys and sambar, especially the Podi Idli. Also try their crispy dosas and sweet pongal."
+            }, null, 2),
+            "prediction.json": JSON.stringify({
+                "rate": 0.0425,
+                "reason": "By December 2025, the Federal Reserve is likely to have implemented several interest rate cuts in response to moderating inflation and a potentially softening labor market. However, given the Fed's cautious approach and the desire to avoid reigniting inflationary pressures, rates are unlikely to return to pre-pandemic lows. A target range of 4.00-4.25% (0.04-0.0425) would represent a significant easing from mid-2024 levels while still maintaining a restrictive stance if inflation proves sticky, or a neutral stance if inflation is well under control."
+            }, null, 2),
+            "LICENSE": `MIT License
+
+Copyright (c) 2024 Your Name
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.`,
+            "uid.txt": `34356216329267003712036350862111554886679375183633114503618195167309546164778`
+        };
+
+        const contentDisplay = document.getElementById('content-display');
+        const navLinks = document.querySelectorAll('.sidebar .nav-link, .navbar-nav .nav-link');
+
+        function displayContent(filename) {
+            contentDisplay.innerHTML = '';
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            const fileLink = document.querySelector(`.sidebar .nav-link[data-filename="${filename}"], .navbar-nav .nav-link[data-filename="${filename}"]`);
+            if (fileLink) {
+                fileLink.classList.add('active');
+            }
+
+            if (filename === 'home') {
+                contentDisplay.innerHTML = `
+                    <h2 class="mb-4">Welcome to my GitHub Pages site!</h2>
+                    <p>This single-page application serves as a portfolio demonstrating various file types and content as specified in the brief. Use the navigation on the left to explore the different files.</p>
+                    <p>Each link will display the content of the corresponding file directly on this page.</p>
+                `;
+                document.title = "My GitHub Pages - Home";
+                return;
+            }
+
+            const content = fileContents[filename];
+            if (content === undefined) {
+                contentDisplay.innerHTML = `<h2 class="error-message">Error: File "${filename}" not found.</h2><p>Please select a file from the sidebar.</p>`;
+                document.title = "My GitHub Pages - Error";
+                return;
+            }
+
+            let renderedHtml = '';
+            let contentType = 'text';
+            let title = filename;
+
+            if (filename.endsWith('.json')) {
+                contentType = 'json';
+                renderedHtml = `<pre><code class="language-json">${content}</code></pre>`;
+            } else if (filename.endsWith('.md')) {
+                contentType = 'markdown';
+                renderedHtml = `<div>${marked.parse(content)}</div>`;
+            } else if (filename.endsWith('.svg')) {
+                contentType = 'svg';
+                renderedHtml = `<div class="svg-container">${content}</div>`;
+            } else {
+                renderedHtml = `<pre><code class="language-text">${content}</code></pre>`;
+            }
+
+            contentDisplay.innerHTML = `
+                <h2 class="mb-4">${title}</h2>
+                <div class="file-content">
+                    ${renderedHtml}
+                </div>
+            `;
+            document.title = `My GitHub Pages - ${filename}`;
+
+            if (contentType === 'json' || contentType === 'text') {
+                hljs.highlightAll();
+            }
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const filename = this.dataset.filename;
+                history.pushState(null, '', `?file=${filename}`);
+                displayContent(filename);
+            });
+        });
+
+        window.addEventListener('popstate', () => {
+            const params = new URLSearchParams(window.location.search);
+            const fileParam = params.get('file');
+            displayContent(fileParam || 'home');
+        });
+
+        const initialParams = new URLSearchParams(window.location.search);
+        const initialFile = initialParams.get('file');
+        displayContent(initialFile || 'home');
+    </script>
+</body>
+</html>
